@@ -1,0 +1,72 @@
+#allThreeBoxes{
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+}
+
+.randomBox{
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    border-radius: 50px;
+    height: 700px;
+    width: 500px;
+    margin-right: 15px;
+    display: grid;
+    grid-template-rows: 1fr 11fr;
+}
+#headLine{
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+
+}
+
+#randomNumberBox{
+    margin-left: 100px;
+    margin-right: 50px;
+}
+
+#randomDiceBox{
+    margin-left: 30px;
+}
+
+.boxHeadline{
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+.headLineBox{
+    border-bottom-width: 5px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+}
+
+body{
+    background-image: url('/Pictures/dices.jpg');
+}
+
+#getRandomNumberHeadline{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+#randomNumberBoxContent{
+    display: grid;
+    grid-template-rows: 6fr 6fr;
+}
+
+#randomNumberTo{
+    width: 100px;
+}
+
+#randomNumberFrom{
+    width: 100px;
+}
+
+#randomNumberResult{
+    border: 1px solid #ccc;
+    width: 150px;
+    display: inline-block;
+    background-color: #f9f9f9;
+}
