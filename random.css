@@ -43,7 +43,7 @@
 }
 
 body{
-    background-image: url('/Pictures/dices.jpg');
+    background-image: url('dices.jpg');
 }
 
 #getRandomNumberHeadline{
