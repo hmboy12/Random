@@ -5,7 +5,7 @@ generateButton.addEventListener('click', () => generateRandomNumberFromUserInter
 function generateRandomNumberFromUserInterval(){
     let from = document.getElementById("randomNumberFrom");
     let to = document.getElementById("randomNumberTo");
-    if(from.value>=to.value){
+    if(from.value===to.value || from.value> to.value){
         alert("Invalid interval");
     } else {
         let randomNumber = getRandomNumber(from.value, to.value);
