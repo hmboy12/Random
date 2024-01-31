@@ -12,7 +12,7 @@
     width: 500px;
     margin-right: 15px;
     display: grid;
-    grid-template-rows: 1fr 11fr;
+    grid-template-rows: 2fr 10fr;
 }
 #headLine{
     font-weight: bold;
@@ -69,4 +69,107 @@ body{
     width: 150px;
     display: inline-block;
     background-color: #f9f9f9;
+}
+#swapButton{
+    margin-top: 5px;
+}
+
+#rollNormalDiceHeadLine{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+#normalDiceResult{
+    border: 1px solid #ccc;
+    width: 150px;
+    display: inline-block;
+    background-color: #f9f9f9;
+}
+
+#rollOrginalDiceButton{
+    margin-left: 150px;
+}
+
+#randomDiceBox{
+    display: grid;
+    grid-template-rows: 2fr 2fr 8fr;
+}
+
+#randomDiceBoxContent{
+    border-bottom-width: 5px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+}
+
+#rollNRandomDicesHeadline{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+#numberOfDices{
+    width: 70px;
+}
+
+.label{
+    font-weight: bold;
+    color: white;
+}
+
+#nDicesResult{
+    border: 1px solid #ccc;
+    width: 150px;
+    display: inline-block;
+    background-color: #f9f9f9;
+}
+
+#pickOnePersonHeadline{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+#randomNamesBoxContent{
+    border-bottom-width: 5px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+}
+
+#randomNamesBox{
+    display: grid;
+    grid-template-rows: 2fr 2fr 8fr;
+}
+
+#personResult{
+    border: 1px solid #ccc;
+    width: 150px;
+    display: inline-block;
+    background-color: #f9f9f9;
+}
+
+#personsToPickBetween{
+    width: 120px;
+}
+
+#lastManStandingHeadline{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+#lockNamesButton{
+    margin-left: 75px;
+}
+
+#createSpace{
+    margin-top: 15px;
+}
+
+#lockedNamesResult{
+    border: 1px solid #ccc;
+    width: 150px;
+    display: inline-block;
+    background-color: #f9f9f9;
+    width: 350px;
 }

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="random.css">
 </head>
 <body>
-<h1 id="headLine">Frederiks Random Generator</h1>
+<h1 id="headLine">Random</h1>
 <div id="allThreeBoxes">
     <div id="randomNumberBox" class="randomBox">
         <div id="randomNumberBoxHeadLine" class="headLineBox">
@@ -19,6 +19,7 @@
                 <input type="number" id="randomNumberTo" placeholder="To">
                 <button id="generateRandomNumberButton">Generate</button>
                 <div id="randomNumberResult">Result:</div>
+                <button id="swapButton">Swap interval</button>
             </div>
             <div>
                 Her skal der være et eller andet random med tal
@@ -27,18 +28,46 @@
     </div>
     <div id="randomDiceBox" class="randomBox">
         <div id="randomDiceBoxHeadLine" class="headLineBox">
-            <h2 class="boxHeadline">randomDice</h2>
+            <h2 class="boxHeadline">Random Dice</h2>
         </div>
         <div id="randomDiceBoxContent">
-            content
+            <p id="rollNormalDiceHeadLine">Roll orginal dice</p>
+            <button id="rollOrginalDiceButton">Roll</button>
+            <div id="normalDiceResult">Result:</div>
+        </div>
+        <div id="rollNRandomDices">
+            <p id="rollNRandomDicesHeadline">Roll n orginal dices</p>
+            <label class="label">Roll</label>
+            <input type="number" id="numberOfDices" placeholder="n">
+            <label class="label">dices and get the</label>
+            <button id="sumButton">sum</button>
+            <button id="averageButton">average</button>
+            <div id="nDicesResult">Result:</div>
         </div>
     </div>
     <div id="randomNamesBox" class="randomBox">
         <div id="randomNamesBoxHeadLine" class="headLineBox">
-            <h2 class="boxHeadline">randomName</h2>
+            <h2 class="boxHeadline">Random names</h2>
         </div>
         <div id="randomNamesBoxContent">
-            content
+            <p id="pickOnePersonHeadline">Pick random person</p>
+            <button id="pickRandomPersonButton">Pick</button>
+            <label class="label">random name among</label>
+            <input type="text" id="personsToPickBetween" placeholder="person, person,...">
+            <div id="personResult">Result:</div>
+        </div>
+        <div id="lastManStanding">
+            <p id="lastManStandingHeadline">Last man standing</p>
+            <div>
+                <button id="lockNamesButton">Lock</button>
+                <label class="label"> in the following persons</label>
+                <input type="text" id="namesToEliminate" placeholder="person, person,...">
+            </div>
+            <div id="createSpace">
+                <button id="eliminateButton">Eliminate</button>
+                <label class="label">one from</label>
+                <div id="lockedNamesResult">locked names will appear here when you lock </div>
+            </div>
         </div>
     </div>
 </div>
