@@ -115,6 +115,17 @@ function lockInNames(){
     namesNewValue.value="";
 }
 
+function fromArrayToString(array){
+    let result = ""
+    array.forEach((e) => {
+        result += e
+        if(array.indexOf(e)!==array.length-1){
+            result += ", "
+        }
+    })
+    return result
+}
+
 //Eliminate one name
 let eliminateButton = document.getElementById("eliminateButton");
 eliminateButton.addEventListener("click", () => eliminateName());
@@ -124,5 +135,6 @@ function eliminateName(){
     let arrayWithNamesToEliminateBetween = namesToEliminateBetween.split(' - ');
     let randomIndex = getRandomNumber(0, arrayWithNamesToEliminateBetween.length -1);
     let arrayWithNamesWithoutTheEliminatedName = arrayWithNamesToEliminateBetween.splice(1, randomIndex);
-    console.log(arrayWithNamesWithoutTheEliminatedName);
+    let eliminateNamesDocument = document.getElementById("lockedNamesResult");
+    eliminateNamesDocument.innerText = fromArrayToString(arrayWithNamesWithoutTheEliminatedName);
 }
