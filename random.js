@@ -5,8 +5,6 @@ generateButton.addEventListener('click', () => generateRandomNumberFromUserInter
 function generateRandomNumberFromUserInterval(){
     let from = document.getElementById("randomNumberFrom");
     let to = document.getElementById("randomNumberTo");
-    console.log("This is from value: "+from.value);
-    console.log("This is to value: " +to.value)
     if(from.value===to.value || from.value > to.value){
         alert("Invalid interval");
     } else {
@@ -89,7 +87,6 @@ function pickRandomName(){
     let arrayNames = names.split(',');
     let randomIndex = getRandomNumber(0, arrayNames.length -1);
     let randomName = arrayNames[randomIndex];
-    console.log(randomName);
     let resultElement = document.getElementById("personResult");
     resultElement.innerText = "Result: "+randomName;
 }
@@ -102,11 +99,10 @@ function lockInNames(){
     let names = document.getElementById("namesToEliminate").value.trim();
     let arrayNames = names.split(',');
     let result="";
-    console.log(arrayNames[arrayNames.length-1])
     arrayNames.forEach((e) => {
         result +=e
         if(e!==arrayNames[arrayNames.length-1]){
-            result += " -"
+            result += " - "
         }
     });
     let lockedNamesResult = document.getElementById("lockedNamesResult");
@@ -120,7 +116,7 @@ function fromArrayToString(array){
     array.forEach((e) => {
         result += e
         if(array.indexOf(e)!==array.length-1){
-            result += ", "
+            result += " - "
         }
     })
     return result
@@ -133,8 +129,12 @@ eliminateButton.addEventListener("click", () => eliminateName());
 function eliminateName(){
     let namesToEliminateBetween = document.getElementById("lockedNamesResult").innerText;
     let arrayWithNamesToEliminateBetween = namesToEliminateBetween.split(' - ');
-    let randomIndex = getRandomNumber(0, arrayWithNamesToEliminateBetween.length -1);
-    let arrayWithNamesWithoutTheEliminatedName = arrayWithNamesToEliminateBetween.splice(1, randomIndex);
+    console.log("This is the list with the names to eliminate: " + arrayWithNamesToEliminateBetween);
+    console.log("This the length of the list: " + arrayWithNamesToEliminateBetween.length);
+    let randomIndex = getRandomNumber(0, arrayWithNamesToEliminateBetween.length - 1);
+    let arrayWithNamesWithoutTheEliminatedName = arrayWithNamesToEliminateBetween.slice(0); // Copy the array
+    arrayWithNamesWithoutTheEliminatedName.splice(randomIndex, 1);
+    console.log("This is the list without the eliminated name: " + arrayWithNamesWithoutTheEliminatedName);
     let eliminateNamesDocument = document.getElementById("lockedNamesResult");
-    eliminateNamesDocument.innerText = fromArrayToString(arrayWithNamesWithoutTheEliminatedName);
+    eliminateNamesDocument.innerText = fromArrayToString(arrayWithNamesWithoutTheEliminatedName)
 }
