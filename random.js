@@ -5,11 +5,11 @@ generateButton.addEventListener('click', () => generateRandomNumberFromUserInter
 function generateRandomNumberFromUserInterval(){
     let from = document.getElementById("randomNumberFrom");
     let to = document.getElementById("randomNumberTo");
+    let showResult = document.getElementById("randomNumberResult");
     if(from.value===to.value || from.value > to.value){
-        alert("Invalid interval");
+        showResult.innerText = "Result: Invalid interval"
     } else {
         let randomNumber = getRandomNumber(from.value, to.value);
-        let showResult = document.getElementById("randomNumberResult");
         showResult.innerText = "Result: "+ randomNumber.toString();
     }
 
@@ -126,15 +126,29 @@ function fromArrayToString(array){
 let eliminateButton = document.getElementById("eliminateButton");
 eliminateButton.addEventListener("click", () => eliminateName());
 
+//Function that checks if the last man standing is over
+function isLastManStandingOver(array){
+    if(array.length < 2){
+        return true
+    } else {
+        return false
+    }
+}
+
 function eliminateName(){
     let namesToEliminateBetween = document.getElementById("lockedNamesResult").innerText;
     let arrayWithNamesToEliminateBetween = namesToEliminateBetween.split(' - ');
-    console.log("This is the list with the names to eliminate: " + arrayWithNamesToEliminateBetween);
-    console.log("This the length of the list: " + arrayWithNamesToEliminateBetween.length);
-    let randomIndex = getRandomNumber(0, arrayWithNamesToEliminateBetween.length - 1);
-    let arrayWithNamesWithoutTheEliminatedName = arrayWithNamesToEliminateBetween.slice(0); // Copy the array
-    arrayWithNamesWithoutTheEliminatedName.splice(randomIndex, 1);
-    console.log("This is the list without the eliminated name: " + arrayWithNamesWithoutTheEliminatedName);
-    let eliminateNamesDocument = document.getElementById("lockedNamesResult");
-    eliminateNamesDocument.innerText = fromArrayToString(arrayWithNamesWithoutTheEliminatedName)
+    if(!isLastManStandingOver(arrayWithNamesToEliminateBetween)){
+        let randomIndex = getRandomNumber(0, arrayWithNamesToEliminateBetween.length - 1);
+        let arrayWithNamesWithoutTheEliminatedName = arrayWithNamesToEliminateBetween.slice(0); // Copy the array
+        arrayWithNamesWithoutTheEliminatedName.splice(randomIndex, 1);
+        let eliminateNamesDocument = document.getElementById("lockedNamesResult");
+        eliminateNamesDocument.innerText = fromArrayToString(arrayWithNamesWithoutTheEliminatedName)
+    } else {
+        namesToEliminateBetween = "The winner is found"
+        let lastManStandingWinnerLabel = document.getElementById("lastManStandingWinnerLabel")
+        lastManStandingWinnerLabel.innerText = fromArrayToString(arrayWithNamesWithoutTheEliminatedName)
+    }
+
+
 }

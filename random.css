@@ -168,8 +168,18 @@ body{
 
 #lockedNamesResult{
     border: 1px solid #ccc;
-    width: 150px;
     display: inline-block;
     background-color: #f9f9f9;
     width: 350px;
+}
+
+#lastManStandingWinner{
+    margin-top: 15px;
+}
+
+#lastManStandingWinnerLabel{
+    border: 1px solid #ccc;
+    display: inline-block;
+    background-color: #f9f9f9;
+    display: inline-block;
 }
